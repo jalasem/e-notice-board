@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Noycc</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="sources/animate.css">
+  <link rel="stylesheet" href="sources/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="sources/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="sources/noycc.css">
+  <script>document.write('<base href="' + document.location + '" />');</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- IE required polyfills, in this exact order -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.26/system-polyfills.js"></script>
+  <script src="https://npmcdn.com/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+  <!-- Angular polyfill required everywhere -->
+  <script src="https://code.angularjs.org/2.0.0-beta.15/angular2-polyfills.js"></script>
+
+  <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.15/Rx.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.15/angular2.dev.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.15/router.dev.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.15/http.dev.js"></script>
+
+  <script>
+      System.config({
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {
+          'api': {defaultExtension: 'ts'}, 
+          'app': {defaultExtension: 'ts'} 
+        } 
+      });
+    System.import('app/boot')
+          .then(null, console.error.bind(console));
+  </script>
+
+</head>
+
+<body class="grey lighten-2">
+  <noycc-app>Loading...</noycc-app>
+
+  <script src="sources/jquery.min.js"></script>
+  <script src="sources/materialize.min.js"></script>
+  <script>
+    $("#menu-toggle").click(function(){
+      $('#side-menu').toggleClass('collapsed');
+      $('.top-fixed').slideToggle();
+      $('#notice-board').toggleClass('expanded');
+      $('.menu-details').slideToggle();
+      $('.menus').toggleClass('active');
+    });
+  </script>
+</body>
+
+</html>

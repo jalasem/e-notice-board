@@ -1,0 +1,10 @@
+{
+  "appId": "enotice",
+  "apiKey": "9529891b3daebf7b1fdef3f8cd9c2f96809b08b5213c7f60c16dac50b3f451bf",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

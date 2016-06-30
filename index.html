@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Noycc</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="sources/animate.css">
+	<link rel="stylesheet" href="sources/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="sources/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="sources/noycc.css">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body class="grey lighten-2">
+    <noycc-app>Loading...</noycc-app>
+
+    <script src="sources/jquery.min.js"></script>
+    <script src="sources/materialize.min.js"></script>
+    <script>
+      $("#menu-toggle").click(function(){
+        $('#side-menu').toggleClass('collapsed');
+        $('.top-fixed').slideToggle();
+        $('#notice-board').toggleClass('expanded');
+        $('.menu-details').slideToggle();
+        $('.menus').toggleClass('active');
+      });
+    </script>
+  </body>
+
+</html>

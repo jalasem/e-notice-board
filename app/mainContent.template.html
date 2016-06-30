@@ -1,0 +1,183 @@
+<div class="row">
+  <div id="side-menu" 
+       class="blue-grey darken-2 white-text col s2 m2 l2"
+       [class.collapsed]="isExpanded">
+    <ul>
+      <li *ngFor="#sideMenu of sideMenus">
+        <a class="waves-effect waves-light" href="#">
+          <i class="fa {{ sideMenu.menuIcon }} fa-2x"></i> <span *ngIf="!isExpanded" class="menu-details hide-on-small-only"> 
+            {{ sideMenu.name }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="notice-board" 
+      class="col s10 m10 l10 right grey lighten-4"
+      [class.expanded]="isExpanded">
+    <div class="col l12 brown white-text darken-2" style="background-image:url(images/cis.jpg)">
+      <div class="transparent-overlay">
+        <br>
+        <h3 class="center"> Faculty of Communication and Information Science<br><sub>General Notice board</sub></h3>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div id="general" class="col s12 m8 l8">
+        <div *ngFor="#post of posts, #i = post_index_in_view"  class="col s12 m12 l12 notice">
+          <div class="card waves-effect">
+            <div *ngIf="post.hasImage" class="card-image">
+              <img src="{{ post.featuredImage }}">
+              <span class="card-title">{{post.title}}</span>
+            </div>
+            <div *ngIf="!post.hasImage" class="card-content">
+              <h5>{{ post.title }}</h5>
+              <p>{{ post.details }}</p>
+            </div>
+            <div class="card-action">
+              <like [totalLikes]="post.totalLikes" [iLike]="post.iLike" (liked)="like_function()"></like>
+              <i class="fa fa-share right"> share </i>
+            </div>
+          </div>
+          <p>
+            Posted by <span class="green-text">{{ post.postedBy }}</span> 
+            on <span class="green-text">{{ post.postedOn | date:'MMM yyyy' }}</span>
+            <span *ngFor="#tag of post.tags" class="right-align right">
+              . <i class="fa fa-tag"></i> {{ tag }}
+            </span> 
+          </p>
+        </div>
+        <div *ngIf="posts.length == 0" class="container center brown-text text-darken-2">
+          <h4>You won't believe it, the notice board is empty!</h4>
+          <h5>Maybe you should contact the admin. Something might be wrong</h5>
+        </div>
+      </div>
+      <div id="others" class="col s12 m4 l4 blue-grey darken-2 white-text">
+        <h5>General Information<br /><sub><sub>(Important Notices)</sub></sub></h5>
+        <ul id="hot" class="collapsible brown-text text-darken-3 white" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">Commencement of 2015/2016 Rain (2nd) Semester Examinations</div>
+              <div class="collapsible-body">
+                <p>The 2015/2016 Rain (2nd) Semester Examinations will commence on Monday, 27th June, 2016 and come to an end on Saturday, 25th July, 2016.</p>
+                <p>It is advisable that students who have misplaced their I.D. cards should make request for a replacement urgently. Students are equally advised to get acquainted with the rules and regulations guiding the conduct of the examinations as contained in the Academic Programmes<br>R. A. Okojie (Mrs.)</p>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Second</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet,a commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p></div>
+            </li>
+            <li>
+              <div class="collapsible-header">Third</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea aecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p></div>
+            </li>
+          </ul>
+          <br>
+          <h5>Filter Notice</h5>
+          <ul class="collapsible brown-text text-darken-3 white" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header">January</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">February</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">March</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">April</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">May</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">June</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">July</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">August</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">September</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">October</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">November</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header">December</div>
+              <div class="collapsible-body">
+                <!-- angular handles content -->
+              </div>
+            </li>
+          </ul>
+
+          <!--some zippy testing-->
+          <zippy title="who can this stuff?">
+            Everyone can see this stuff
+          </zippy>
+          <zippy title="who can delete this stuff?">
+            No one should delete this stuff!!!
+          </zippy>
+          <!--some zippy testing-->
+
+          <!--one more thing! contact form test too-->
+          <!--<contact-form></contact-form>-->
+          <!--one more thing-->
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large yellow">
+    <i class="fa fa-plus fa-4x pink-text text-darken-3"></i>
+  </a>
+  <!-- <ul>
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul> -->
+</div>

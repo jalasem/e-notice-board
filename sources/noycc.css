@@ -1,0 +1,191 @@
+.menu.bar {
+    width: 2.5em;
+    height: 1px;
+    /*background: white;*/
+    background-color: #3e2723;
+    margin: 10px;
+    transition: all ease-in-out 0.4s;
+}
+.menus:hover .menu.bar:first-child {
+    transform: translate(11px,6px) rotate(-25deg);
+    width: 1.5em;
+}
+.menus:hover .menu.bar:nth-child(2) {
+    margin-left: 1.5em;
+}
+.menus:hover .menu.bar:nth-child(3) {
+    transform: translate(11px,-6px) rotate(25deg) !important;
+    width: 1.5em;
+}
+.menus {
+    display: inline-block;
+    padding: 0em 0rem 0rem 0rem;
+    margin-right: 10em;
+    margin-left: 0.5em;
+}
+.menus:hover {
+    margin-left: 0em;
+    display: inline-block;
+    padding: 0.5em 0;
+    margin-right: 10em;
+    margin-top: 0.15em;
+    border-radius: 50%;
+}
+.menus.active {
+    transform: rotate(-90deg);
+    margin-left: 0em !important;
+}
+.menus.active .menu.bar {
+    width: 2.5em;
+    height: 1.5px;
+    background: white;
+    background-color: #3e2723;
+    margin: 15px;
+    transition: all ease-in-out 0.4s;
+}
+#side-menu {
+    height: 100vh;
+    position: fixed;
+    /*font-weight: bold;*/
+    padding: 0;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 10px rgba(0, 0, 0, 0.12);
+}
+@media screen and (max-width:992px) {
+    nav .brand-logo.left {
+        left: 5.5rem;
+    }
+}
+#side-menu a {
+    color: white;
+}
+#side-menu ul li a {
+    padding: 0.5rem 1rem;
+    display: inherit;
+}
+#side-menu span.menu-details {
+    font-size: 1rem;
+    margin-left: 0.2em;
+    text-align: right;
+    border-bottom: 14px solid transparent;
+}
+#side-menu ul li:first-child {
+    margin-top: -1em;
+}
+#side-menu ul li:hover {
+    background: #607D8B;
+    border-left: 2px solid white;
+}
+.card {
+    width: 100%;
+}
+.card .heading {
+    padding: 0.1em 1em;
+}
+@media only screen and (min-width: 601px) {
+    #side-menu {
+        width: 15%;
+    }
+    #notice-board {
+        width: 85%;
+    }
+    #side-menu.collapsed {
+        width: 5%;
+    }
+    #notice-board.expanded {
+        width: 95%;
+    }
+}
+#side-menu, #notice-board {
+    -webkit-transition: ease-in-out 1s all;
+    -moz-transition: ease-in-out 0.5s all;
+    -o-transition: ease-in-out 0.5s all;
+    transition: ease-in-out 1s all;
+}
+#side-menu.collapsed {
+    width: 5%;
+}
+#notice-board.expanded {
+    width: 95%;
+}
+#notice-board {
+    padding: 0;
+}
+.collapsible-header {
+    line-height: 2rem;
+    background-color: #fff;
+    font-weight: bold;
+}
+#hot .collapsible-header {
+    color: #3e2723;
+    text-decoration: underline;
+    line-height: 2rem;
+}
+.collapsible-body p {
+    margin: 0;
+    padding: 0.5rem;
+}
+.row .col {
+    padding: 0 0.5rem;
+}
+.transparent-overlay {
+    background-color: rgba(82, 92, 101, 0.2);
+}
+.blue-grey.darken-2 {
+    background-color: #525c65;   
+}
+#general .card {
+    margin-bottom: -0.5em;
+}
+#general card p, #general card h1, #general card h2, #general card h3, #general card h4, #general card h5 {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.card .card-image .card-title {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background: rgba(128, 128, 128, 0.24);
+    font-weight: 400;
+}
+div.notice {
+    margin-bottom: 1em;
+}
+@media screen and (max-width: 1135px) {
+    #side-menu.collapsed {
+        width: 8%;
+    }
+    #notice-board.expanded {
+        width: 92%;
+    }
+    .menus.active .menu.bar {
+        width: 2em;
+        height: 1.1px;
+        background: white;
+        background-color: #3e2723;
+        margin: 12px;
+        transition: all ease-in-out 0.4s;
+    }
+}
+@media screen and (max-width: 1135px) { 
+    #side-menu.collapsed {
+        width: 10%;
+    }
+    #notice-board.expanded {
+        width: 91%;
+    }
+    #side-menu {
+        width: 12%;
+    }
+    #notice-board {
+        width: 89%;
+    }
+    #side-menu ul li a {
+        padding: 0.5rem 0.5rem;
+        display: inherit;
+    }
+    .menus {
+        margin-right: 2em;
+    }
+}
